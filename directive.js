@@ -214,7 +214,7 @@ angular.module("tide-angular")
         var placeSelectedRegion = function() {
           var posX = scope.selectedRegion.pos[0];
           var posY = scope.selectedRegion.pos[1];
-          var zoomFactor = scope.selectedRegion.k;
+          var zoomFactor = scope.selectedRegion.zoom;
 
           // Modificar posición de contenedor de comunas a la posición de la región
           comunasContainer

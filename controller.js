@@ -40,20 +40,20 @@ angular.module('tideApp')
     // Para cada región se definen coordenadas de traslación del mapa (en puntos) y factor de zoom
     // para desplegar el mapa centrado en la respectiva región 
     this.regiones = [
-        {numero:15, nombre:"Tarapacá", pos:[-175,2745], k:0.92},
-        {numero:1, nombre:"Iquique",  pos:[-28.37,1595], k:0.586},
-        {numero:2, nombre:"Antofagasta",  pos:[123,719], k:0.307},
-        {numero:3, nombre:"Atacama",  pos:[128.5,529.9], k:0.345},
-        {numero:4, nombre:"Coquimbo",  pos:[148.6,356.6], k:0.456},
-        {numero:5, nombre:"Valparaiso",  pos:[94.9,133.7], k:0.735},
-        {numero:13, nombre:"Metropolitana",  pos:[0,0], k:1},
-        {numero:6, nombre:"O'Higgins",  pos:[17,-263.9], k:1.265},
-        {numero:7, nombre:"Maule",  pos:[171.9,-277.9], k:0.746},
-        {numero:8, nombre:"Biobio",  pos:[268.9,-359.1], k:0.544},
-        {numero:9, nombre:"Araucanía",  pos:[274.1,-637.5], k:0.637},
-        {numero:10, nombre:"Los Lagos",  pos:[319.3,-534.2], k:0.334},
-        {numero:11, nombre:"Aysén",  pos:[336,-526.2], k:0.221},
-        {numero:12, nombre:"Magallanes",  pos:[285.2,-513.44], k:0.141},
+        {numero:15, nombre:"Tarapacá", pos:[-175,2745], zoom:0.92},
+        {numero:1, nombre:"Iquique",  pos:[-28.37,1595], zoom:0.586},
+        {numero:2, nombre:"Antofagasta",  pos:[123,719], zoom:0.307},
+        {numero:3, nombre:"Atacama",  pos:[128.5,529.9], zoom:0.345},
+        {numero:4, nombre:"Coquimbo",  pos:[148.6,356.6], zoom:0.456},
+        {numero:5, nombre:"Valparaiso",  pos:[94.9,133.7], zoom:0.735},
+        {numero:13, nombre:"Metropolitana",  pos:[0,0], zoom:1},
+        {numero:6, nombre:"O'Higgins",  pos:[17,-263.9], zoom:1.265},
+        {numero:7, nombre:"Maule",  pos:[171.9,-277.9], zoom:0.746},
+        {numero:8, nombre:"Biobio",  pos:[268.9,-359.1], zoom:0.544},
+        {numero:9, nombre:"Araucanía",  pos:[274.1,-637.5], zoom:0.637},
+        {numero:10, nombre:"Los Lagos",  pos:[319.3,-534.2], zoom:0.334},
+        {numero:11, nombre:"Aysén",  pos:[336,-526.2], zoom:0.221},
+        {numero:12, nombre:"Magallanes",  pos:[285.2,-513.44], zoom:0.141},
     ];
 
     // Originalmente se selecciona la región metropolitana
