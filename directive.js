@@ -11,11 +11,14 @@
  * @requires toolTip
  * @element div
  * 
- * @param {array} tdData Data array used for populating the chart
- * @param {function=} tdTooltipMessage Function that should return a text to be displayed in the tooltip, given a data element
- * @param {int=} tdWidth Chart widht (and height)
- * @description
- *
+ * @param {object} tdGeoData Objeto en formato toposon con especificaciñon geográfica de comunas de Chile
+ * @param {object} tdData Objeto con atributos de cada comuna (las llave corresponden a los IDs de cada comuna)
+ * @param {function=} tdTooltipMessage Función que retorna un texto html a ser desplegado en el tooltip
+ * @param {number=} tdZoom Factor de zoom vigente en el despliegue del mapa de comunas
+ * @param {number=} tdPos Coordenadas de desplazamiento [x,y] en el despliegue del mapa de comunas
+ * @param {number=} tdProjectionCenter Coordenadas geográficas (longitud, latitud) en la cual se centra la proyección (mapa) base de comunas (los desplacamientos son c/r a este punto)
+ * @param {number=} tdProjectionZoom Factor de zoom para l aproyección base de comunas (los zooms posteriores son sobre esta base)
+ * @param {object=} tdSelectedRegion Objeto con datos de la región seleccionada (incluye atributos numero, pos & zoom)
  * Generates a scatered XY Chart
  *
  */
@@ -32,7 +35,6 @@ angular.module("tide-angular")
         pos:"=?tdPos",
         projectionCenter:"=?tdProjectionCenter",
         projectionZoom:"=?tdProjectionZoom",
-        k:"=?tdK",
         selectedRegion:"=?tdSelectedRegion"
       },
       
