@@ -1,0 +1,127 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Navegador por comunas</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css({.tmp,app}) styles/main.css -->
+  <link rel="stylesheet" href="main.css">
+  <!-- endbuild -->
+  <script src="./bower_components/modernizr/modernizr.js"></script>
+  <script src="./bower_components/jquery/dist/jquery.js"></script>
+  <script src="./bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="tideApp" ng-controller="AppController as controller">
+  <!--[if lt IE 7]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div id="browser_warning">
+    <h3 class="text-muted">Su navegador no soporta algunas funciones modernas (HTML5 / SVG) que son necesarias para el funcionamiento de este visualizador.  Le sugerimos actualizarl el navegador o probar con uno diferente.</h3>
+  </div>
+
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#humandev-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Navegador por comunas</a>
+    </div>
+    <div class="collapse navbar-collapse" id="humandev-navbar">
+
+
+    </div>
+
+    </div>
+  </nav>
+
+  <!-- Add your site or application content here -->
+  <!-- container -->
+  <div class="container" >
+  <div class="row">
+    <form role="form">    
+      <div class="form-group">
+        <label for="">Región</label>
+        <select ng-model="controller.selectedRegion" ng-options="region as region.nombre for region in controller.regiones" ng-change="controller.changeRegion()" class="form-control"></select>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div td-mapa-interactivo td-data="controller.data" td-geo-data="controller.geoData" td-tooltip-message="controller.tooltipMessage" td-projection-center="controller.projectionCenter" td-projection-zoom="controller.projectionZoom" td-pos="controller.pos"  td-zoom="controller.zoom" td-selected-region="controller.selectedRegion"></div> 
+    </div>    
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div td-mapa-interactivo2 ></div> 
+    </div>    
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <div class="well">
+        pos: {{controller.pos}} zoom:{{controller.zoom}}
+      </div>
+    </div>
+
+
+    
+  </div>
+
+
+   <div class="footer">
+    <p></p>
+
+    <p>Developed by <a href="http://www.tide.cl" target="_blank">TIDE SA</a>, Chile</p>
+  </div>
+
+
+
+  </div><!-- container -->
+
+    <script type="text/ng-template" id="myPopoverTemplate.html">
+        <div>{{dynamicPopover.content}}</div>
+        <div class="form-group">
+          <label>Popup Title:</label>
+          <input type="text" ng-model="dynamicPopover.title" class="form-control">
+        </div>
+    </script>
+
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="./bower_components/d3/d3.js"></script>
+    <script src="./bower_components/underscore/underscore.js"></script>
+    <script src="./bower_components/tide-angular/tide-angular.js"></script>    
+    <script src="./bower_components/d3-tip/index.js"></script>     
+    <script src="./bower_components/topojson/topojson.js"></script> 
+
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+    <script src="service.js"></script>
+    <script src="directive.js"></script>
+
+
+    <!-- endbuild -->
+  </body>
+  </html>
